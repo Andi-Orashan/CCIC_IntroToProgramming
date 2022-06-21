@@ -14,14 +14,6 @@ public class Snake{
     fill(184, 0, 227);
     rect(x, y, 10, 10);
     fill(0,0,0);
-    //boundaries?
-    if((x == 380 || x == 0) || (y == 380 || y == 0)){
-      fill(200,0,0);
-      rect(10,10,380,380);
-      fill(0,0,0);
-      textSize(100);
-      text("Oh no!", 40,240);
-    }
   }
   
   public void moveSnake(){
@@ -33,6 +25,18 @@ public class Snake{
     x = x - 1;
   }else if(currentDirection == "Down"){
     y = y + 1;
+  }
+  if(x>=379){
+    x=184;
+  }
+    if(x<=11){
+    x=184;
+  }
+  if(y>=379){
+    y=184;
+  }
+    if(y<=11){
+    y=184;
   }
   }
   
@@ -47,4 +51,5 @@ public class Snake{
       currentDirection = "Left";
   }
   }
+  
 }
